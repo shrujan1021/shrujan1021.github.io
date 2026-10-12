@@ -131,7 +131,7 @@ export const projects = [
     stack: ['HTML', 'CSS', 'JavaScript', 'Firebase Firestore'],
     thumbnail: '/images/bug-tracking-dashboard.png',
     alt: 'Bug Tracking System dashboard listing bug reports with Open and Closed status badges, plus delete and close actions.',
-    liveUrl: null,
+    liveUrl: 'https://bug-tracker-1f6f2.web.app',
     repoUrl: null,
     featured: false,
     hasCaseStudy: false,
