@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Add your sitemap line once the site has a real domain, e.g.
-# Sitemap: https://your-domain.example/sitemap.xml
+Sitemap: https://shrujan1021.github.io/sitemap.xml
