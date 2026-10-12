@@ -95,8 +95,11 @@ export const about = {
 }
 
 /* ============================ SELECTED WORK ============================= */
-/* Four real projects. `thumbnail: null` renders a typographic project
-   visual instead of a fabricated screenshot.                        */
+/* Four real projects. `thumbnail` points at either a genuine screenshot or,
+   where no screenshot exists, an original diagram of that project's real
+   architecture — `diagram: true` renders it unframed so it can never be
+   mistaken for a live capture. `thumbnail: null` falls back to a typographic
+   cover. Nothing here is a fabricated screenshot.                          */
 
 export const projects = [
   {
@@ -126,8 +129,8 @@ export const projects = [
     contribution:
       'Built the CRUD operations, the Open/Closed status tracking, and the responsive dashboard layout.',
     stack: ['HTML', 'CSS', 'JavaScript', 'Firebase Firestore'],
-    thumbnail: null,
-    alt: '',
+    thumbnail: '/images/bug-tracking-dashboard.png',
+    alt: 'Bug Tracking System dashboard listing bug reports with Open and Closed status badges, plus delete and close actions.',
     liveUrl: null,
     repoUrl: null,
     featured: false,
@@ -143,8 +146,9 @@ export const projects = [
     contribution:
       'Worked on the reservation management flows and the underlying CRUD operations against MySQL.',
     stack: ['HTML', 'CSS', 'JavaScript', 'MySQL'],
-    thumbnail: null,
-    alt: '',
+    thumbnail: '/images/reservation-flow.png',
+    alt: 'Diagram of the Restaurant Reservation System: a reservation table interface flowing into a MySQL relational store through create, read, update and delete operations.',
+    diagram: true,
     liveUrl: null,
     repoUrl: null,
     featured: false,
@@ -160,8 +164,9 @@ export const projects = [
     contribution:
       'Contributed to the time-based alert logic, interaction detection, component integration and testing. This was a team project — I did not build it alone.',
     stack: ['Arduino Uno', 'Buzzer', 'LED', 'OLED display'],
-    thumbnail: null,
-    alt: '',
+    thumbnail: '/images/medication-reminder.png',
+    alt: 'Diagram of the Medication Reminder System: an Arduino Uno wired to an OLED display, an LED and a buzzer, with a scheduled time trigger.',
+    diagram: true,
     liveUrl: null,
     repoUrl: null,
     featured: false,

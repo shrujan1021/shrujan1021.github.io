@@ -1280,6 +1280,31 @@ h2 em {
   aspect-ratio: 16 / 9;
 }
 
+/* Original project diagrams keep their own aspect so nothing is cropped —
+   they are shown unframed, so they never read as a browser screenshot. */
+.gitem--a .gitem-media--dgm,
+.gitem--b .gitem-media--dgm,
+.gitem--c .gitem-media--dgm {
+  aspect-ratio: 1013 / 894;
+}
+
+.dgm-frame {
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-lg);
+  background: #0c0b0a;
+  box-shadow: var(--shadow-lg);
+}
+
+.dgm-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 /* typographic cover for projects without a genuine screenshot */
 .pt-visual {
   position: relative;

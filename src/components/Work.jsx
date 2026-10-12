@@ -28,6 +28,23 @@ function TypeVisual({ project }) {
   )
 }
 
+/* Original diagram drawn for a project with no genuine screenshot.
+   Rendered unframed so it can never be mistaken for a live capture. */
+function DiagramVisual({ project }) {
+  return (
+    <div className="dgm-frame">
+      <img
+        src={project.thumbnail}
+        alt={project.alt}
+        width="1013"
+        height="894"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  )
+}
+
 function BrowserFrame({ project, large = false }) {
   return (
     <div className={`shot-frame ${large ? 'shot-frame--lg' : ''}`}>
@@ -49,6 +66,14 @@ function BrowserFrame({ project, large = false }) {
       </div>
     </div>
   )
+}
+
+/* Genuine screenshot → framed as it appears in a browser; original diagram →
+   shown unframed; neither → typographic cover. Never a fabricated screenshot. */
+function ProjectVisual({ project, large = false }) {
+  if (project.diagram) return <DiagramVisual project={project} />
+  if (project.thumbnail) return <BrowserFrame project={project} large={large} />
+  return <TypeVisual project={project} />
 }
 
 function ProjectLinks({ project, onCaseStudy }) {
@@ -90,7 +115,7 @@ function ProjectFeature({ project, onCaseStudy }) {
   return (
     <article className="pfeature">
       <div className="pfeature-media tilt">
-        <BrowserFrame project={project} large />
+        <ProjectVisual project={project} large />
       </div>
 
       <div className="pfeature-copy">
@@ -115,12 +140,8 @@ function ProjectFeature({ project, onCaseStudy }) {
 function GalleryItem({ project, variant, onCaseStudy }) {
   return (
     <article className={`gitem gitem--${variant}`}>
-      <div className="gitem-media tilt">
-        {project.thumbnail ? (
-          <BrowserFrame project={project} />
-        ) : (
-          <TypeVisual project={project} />
-        )}
+      <div className={`gitem-media tilt${project.diagram ? ' gitem-media--dgm' : ''}`}>
+        <ProjectVisual project={project} />
       </div>
 
       <div className="gitem-body">
