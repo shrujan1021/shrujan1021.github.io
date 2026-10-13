@@ -26,7 +26,10 @@ export const profile = {
   linkedin: 'https://linkedin.com/in/shrujan-mitbavkar-a762ba400',
 
   // The PDF must exist at public/resume.pdf. Buttons render only when it does.
-  resumeUrl: '/resume.pdf',
+  // The ?v= query busts browser cache whenever the PDF is replaced: Pages
+  // ignores query strings and serves the same file, but the browser treats it
+  // as a new URL and refetches. Bump it on every CV swap.
+  resumeUrl: '/resume.pdf?v=20261013',
 
   intro:
     "I'm an Information Technology engineering student exploring product design, frontend development, and practical software projects.",
