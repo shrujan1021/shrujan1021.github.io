@@ -31,6 +31,11 @@ export const profile = {
   // as a new URL and refetches. Bump it on every CV swap.
   resumeUrl: '/resume.pdf?v=20261013',
 
+  // Filename the browser writes on download. Without it the file lands as
+  // resume.pdf, or worse — this PDF's own /Title metadata is a leftover
+  // FlowCV URL, which some viewers use for the suggested name.
+  resumeFilename: 'Shrujan Mitbavkar SRIEIT.pdf',
+
   intro:
     "I'm an Information Technology engineering student exploring product design, frontend development, and practical software projects.",
 

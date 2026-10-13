@@ -140,8 +140,7 @@ export default function Nav() {
             <a
               className="btn btn-primary nav-resume"
               href={profile.resumeUrl}
-              target="_blank"
-              rel="noreferrer noopener"
+              download={profile.resumeFilename}
             >
               <FileText size={16} aria-hidden="true" />
               Résumé

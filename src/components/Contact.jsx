@@ -62,7 +62,7 @@ export default function Contact() {
               <h3>Résumé</h3>
               <a
                 href={profile.resumeUrl}
-                download="Shrujan_Mitbavkar_Resume.pdf"
+                download={profile.resumeFilename}
                 className="contact-resume"
               >
                 <FileText size={15} aria-hidden="true" />

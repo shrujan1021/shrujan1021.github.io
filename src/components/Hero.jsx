@@ -57,7 +57,7 @@ export default function Hero() {
               <a
                 className="btn btn-ghost"
                 href={profile.resumeUrl}
-                download="Shrujan_Mitbavkar_Resume.pdf"
+                download={profile.resumeFilename}
               >
                 <Download size={16} aria-hidden="true" />
                 {hero.ctaResume.label}
